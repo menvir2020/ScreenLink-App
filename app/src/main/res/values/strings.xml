@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenLink</string>
+    <string name="acc_desc">Permite que otro dispositivo de tu red, y solo con tu aprobación, toque la pantalla, escriba texto y use los botones Atrás e Inicio en este equipo.</string>
+</resources>
