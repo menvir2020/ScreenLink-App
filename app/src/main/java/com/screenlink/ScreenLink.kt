@@ -1800,7 +1800,7 @@ class MainActivity : Activity(), UiListener {
         }
     }
 
-    private fun setImmersive(on: Boolean) {
+    private fun applyImmersive(on: Boolean) {
         @Suppress("DEPRECATION")
         window.decorView.systemUiVisibility = if (on) {
             View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or View.SYSTEM_UI_FLAG_FULLSCREEN or
@@ -1821,7 +1821,7 @@ class MainActivity : Activity(), UiListener {
         homeView.visibility = View.VISIBLE
         sessionView.visibility = View.GONE
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        setImmersive(false)
+        applyImmersive(false)
         // Celular: vertical. Tablet y TV: horizontal.
         requestedOrientation = if (wide) ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
         else ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -1832,7 +1832,7 @@ class MainActivity : Activity(), UiListener {
         homeView.visibility = View.GONE
         sessionView.visibility = View.VISIBLE
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        setImmersive(true) // pantalla completa, sin barras del sistema
+        applyImmersive(true) // pantalla completa, sin barras del sistema
         if (!wide) requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
     }
 
