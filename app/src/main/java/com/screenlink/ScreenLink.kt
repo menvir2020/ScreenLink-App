@@ -209,7 +209,7 @@ object Core {
         discovery.applyPublish()
     }
 
-    fun setMode(m: String) {
+    fun changeMode(m: String) {
         mode = m
         prefs.edit().putString("mode", m).apply()
         discovery.applyPublish()
@@ -1567,7 +1567,7 @@ class MainActivity : Activity(), UiListener {
     }
 
     private fun chooseMode(m: String) {
-        Core.setMode(m)
+        Core.changeMode(m)
         searching = m == "rx"
         refreshMode()
         refreshDevices()
